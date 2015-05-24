@@ -6,7 +6,7 @@ gem 'pg'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-
+gem 'active_model_serializers', '0.9.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
