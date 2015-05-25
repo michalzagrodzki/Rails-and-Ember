@@ -14,7 +14,7 @@ module('Integration - Landing Page', {
   }
 });
 
-// test presence of text on applicatoin page
+// test presence of text on application page
 test('Should welcome me to Presentation Ember App', function(assert){
   visit('/').then(function(){
     assert.equal(find('h2#title').text(), 'Welcome to Presentation Ember App');
