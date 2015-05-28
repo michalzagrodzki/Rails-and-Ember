@@ -7,7 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('about'); // route for static page 'About'
-  this.resource('speakers'); // route for 'Speakers' index page
+  this.resource('speakers', function(){ // route for 'Speakers' index page
+    this.route('show', {path: ':speaker_id'}); // route for 'Speaker' show page
+  });
 });
 
 export default Router;
