@@ -54,3 +54,38 @@ module('Integration - Speaker Page', {
   }
 });
 
+// tests for elements of page
+
+// test for link to speakers index page from main page
+test('Should navigate to Speakers page from main page', function(assert){
+  visit('/').then(function(){
+    click("a:contains('Speakers')").then(function(){
+      assert.equal(find('h3').text(), 'Speakers');
+    });
+  });
+});
+
+// test for presence of all speakers
+test('Should list all speakers', function(assert){
+  visit('/speakers').then(function() {
+    assert.equal(find('a:contains("Elliot")').length, 1);
+    assert.equal(find('a:contains("Faulkner")').length, 1);
+    assert.equal(find('a:contains("Hemingway")').length, 1);
+  });
+});
+
+// test for link to selected speaker page from speaker index page
+test('Should navigate to selected speaker page from speakers page', function(assert){
+  visit('/speakers').then(function(){
+    click('a:contains("Elliot")').then(function(){
+      assert.equal(find('h4').text(), 'Elliot');
+    });
+  });
+});
+
+// test for presence of single speaker page - address from URL
+test('Should be able to visit single speaker page', function(assert){
+  visit('/speakers/1').then(function(){
+      assert.equal(find('h4').text(), 'Elliot');
+    });
+});
