@@ -6,11 +6,13 @@ import Pretender from 'pretender';
 // variables for server test
 var App, server;
 
-// mockup data for server and for 200 code
+// mockup data for server and for data to display
+
 module('Integration - Speaker Page', {
 
   setup: function(){
     App = startApp();
+    // seeding data for Speaker Page - speakers
     var speakers = [
       {   id:1,
           name: 'Elliot' },
@@ -51,3 +53,4 @@ module('Integration - Speaker Page', {
     server.shutdown();
   }
 });
+
