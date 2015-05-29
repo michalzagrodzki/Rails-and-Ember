@@ -1,7 +1,7 @@
 class Api::SpeakersController < ApplicationController
 
   def index
-    render json: Speaker.all
+    render json: { speakers: Speaker.all }
   end
 
   def show
